@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Response</title>
+    <link rel="stylesheet" href="static/css/chat.css">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Add your custom CSS for the navigation bar -->
+    <link rel="stylesheet" href="static/css/navigation.css">
+    <div class="header">
+        <a href="#chatBot.html" class="logo">Medik</a>
+        <div class="header-right">
+          <a  href="chatBot.html">Home</a>
+          <a class="active" href="#Appointment">Appointment</a>
+          <a href="reminder.html">Reminder</a>
+       
+        </div>
+      </div>
+</head>
+
+<body>
+
+    <main id="wrapper">
+        <div class="container">
+          <form action="#" id="appoint-form" method="POST" onsubmit="return submitForm()">
+            <h1 id="form-head">Book Your Appointment</h1>
+            <label for="city" id="city" class="format">ENTER CITY </label>
+            <input type="text" id="city" name="city" class="dtt"  required>
+            <label for="dateandtime" id="date-time" class="format">SELECT DATE AND TIME </label>
+            <input type="date" id="date" name="date" class="dtt"  required>
+            <input type="time" id="time" name="utime" min="8:00" max="20:00" value="8:00" class="dtt" required>
+            <small id="note">(Note:Visiting hours are 8am to 8pm)</small>
+            <label for="personal details" id="p-details" class="format">PERSONAL DETAILS</label>
+            <input type="text" id="name" class="person-detail" placeholder="Full name*" name="uname" maxlength="20" required>
+            <input type="tel" id="mobile" class="person-detail" name="ucontact" placeholder="Mobile number*" maxlength="10" required>
+            <input type="email" placeholder="Email(optional)" id="email" class="person-detail" name="uemail" required>
+            <textarea id="message" name="umessage" rows="5" cols="3" placeholder="Type text message" class="person-detail"></textarea>
+            <button type="submit" id="submit" value="Submit">Submit </button>
+
+            <!-- Confirmation Details -->
+            <div class="confirmation-details">
+              <h2>Confirmation Details</h2>
+              <p>Confirmation status: <span id="confirmation-status">CONFIRMED</span></p>
+              <p>Confirmation date: <span id="confirmation-date"></span></p>
+              <p>Confirmation time: <span id="confirmation-time"></span></p>
+              <p>City: <span id="confirmation-city"></span></p>
+              <p>Name: <span id="confirmation-name"></span></p>
+              <p>Mobile: <span id="confirmation-mobile"></span></p>
+              <p>Email: <span id="confirmation-email"></span></p>
+            </div>
+
+          </form>
+        </div>
+      </main>
+
+      <script src="static/scripts/appointment.js"></script>
+</body>
